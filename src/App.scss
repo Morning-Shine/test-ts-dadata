@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+@import "./src/constants/variables.scss";
+
+body {
+  overflow: hidden;
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-color: $main-contrast-color;
+    border-radius: 5px 5px 5px 5px;
+    border-width: 6px 6px 6px 6px;
+    border-style: solid;
+    background-clip: padding-box;
+  }
+  ::-webkit-scrollbar-corner {
+    display: none;
+  }
+  * {
+    /*Firefox*/
+    scrollbar-width: thin;
+    scrollbar-color: $main-contrast-color transparent;
+  }
+}
+.app {
+  font-family: "Montserrat", sans-serif;
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar content";
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: $top-bar-height calc(100vh - $top-bar-height);
+  @media (max-width: $point-width-small) {
+    grid-template-areas:
+      "header"
+      "content";
+    grid-template-columns: 1fr;
+  }
+  @media (max-width: $point-width-small) and (orientation: portrait) {
+    grid-template-rows: calc($top-bar-height * 2) calc(100vh - $top-bar-height * 2);
+  }
+}
+section.main-page-info {
+  grid-area: content;
+}

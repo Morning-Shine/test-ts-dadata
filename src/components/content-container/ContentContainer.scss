@@ -1,0 +1,22 @@
+@import "../../constants/variables.scss";
+
+.content-container {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: calc(100vh - 350px);
+    margin: 32px 32px 0 32px;
+    padding: 24px 24px 0 24px;
+    display: flex;
+    flex-direction: column;
+    h2 {
+        font-weight: 700;
+        font-size: 26px;
+        line-height: 32px;
+        margin: 0;
+        padding-bottom: 16px;
+        border-bottom: 1px solid #d7d7d7;
+    }
+    p.no-data {
+        color: red;
+    }
+}

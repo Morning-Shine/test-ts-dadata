@@ -1,0 +1,29 @@
+@import "../../constants/variables.scss";
+
+.header {
+    background-color: $main-contrast-color;
+    width: 100vw;
+    height: $top-bar-height;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @media (max-width: $point-width-small) and (orientation: portrait) {
+        flex-direction: column;
+        height: calc($top-bar-height * 2);
+        justify-content: flex-start;
+    }
+    .company-logo {
+        color: $main-contrast-text-color;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 16px 32px;
+        min-width: max-content;
+        h1 {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            margin: 0 24px;
+        }
+    }
+}
